@@ -3,6 +3,7 @@ import wave from "../../assets/waves.svg";
 import rocket from "../../assets/rocket image.png";
 import human from "../../assets/human.svg";
 import hand from "../../assets/hand.svg";
+import Carousel from "../../components/Carousel";
 
 const move = keyframes`
 0% { transform: translateY(-5px)         }
@@ -131,7 +132,7 @@ const About = () => {
         </div>
         <Content>
           <Rocket>
-            <img src={rocket} alt="" width="400" height="400" />
+            <Carousel />
           </Rocket>
           <AboutText>
             <Human>

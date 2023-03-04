@@ -6,12 +6,22 @@ import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
 import whiteBlob from "../../assets/blob white.png";
 import arrow from "../../assets/Arrow Right.svg";
-import Mobile from "../../assets/mobile.svg";
-
+import frontend from "../../assets/frontend.gif";
+import TypeWriterText from "../../components/TypeWriterText";
 const move = keyframes`
-0% { transform: translateY(-5px)  }
-    50% { transform: translateY(10px) }
-    100% { transform: translateY(-5px) }
+0% { transform: translateY(-2px)  }
+    50% { transform: translateY(5px) }
+    100% { transform: translateY(-2px) }
+`;
+const moveWhite = keyframes`
+0% { transform: translateY(8px)  }
+    50% { transform: translateY(-4px) }
+    100% { transform: translateY(8px) }
+`;
+const movePink = keyframes`
+0% { transform: translateY(8px)  }
+    50% { transform: translateY(-4px) }
+    100% { transform: translateY(8px) }
 `;
 
 const HomeSection = styled.section`
@@ -45,17 +55,20 @@ const PinkBlob = styled.div`
   position: absolute;
   right: 0;
   top: calc(5rem + 5vw);
+  animation: ${movePink} 3s ease infinite;
   z-index: 6;
 `;
 const PurpleBlob = styled.div`
-  width: calc(10% + 10vw);
+  width: calc(10% + 20vw);
   position: absolute;
+  animation: ${move} 3s ease infinite;
   right: 0;
 `;
 const WhiteBlob = styled.div`
-  width: calc(20% + 20vw);
+  width: calc(20% + 30vw);
   position: absolute;
   right: calc(3.5rem + 3.5vw);
+  animation: ${moveWhite} 3s ease infinite;
   top: calc(2rem + 2vw);
   z-index: 5;
 `;
@@ -73,12 +86,14 @@ const MainContent = styled.div`
   }
 `;
 
-const MobileSvg = styled.img`
+const MobileSvg = styled.div`
   max-width: 100%;
-  width: calc(30% + 20vw);
+  width: calc(30% + 10vw);
   height: auto;
   z-index: 7;
-  animation: ${move} 2.5s ease infinite;
+  background: url(${frontend});
+  background-repeat: no-repeat;
+  /* animation: ${move} 3s ease infinite; */
   @media only Screen and (max-width: 48em) {
     align-self: flex-start;
     position: absolute;
@@ -197,19 +212,14 @@ const HeroSection = () => {
           <SubText>
             we help fast growing companies build award winning websites
           </SubText>
+          <TypeWriterText />
           <CTA>
-            Get in touch &nbsp;
+            Explore more &nbsp;
             <img src={arrow} alt="cta" width="100" height="100" />
           </CTA>
         </Lb>
 
-        <MobileSvg
-          src={Mobile}
-          alt="Mobile Svg"
-          srcset=""
-          width="400"
-          height="400"
-        />
+        <MobileSvg style={{ width: 500, height: 500 }} />
       </MainContent>
     </HomeSection>
   );

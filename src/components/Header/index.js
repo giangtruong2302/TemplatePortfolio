@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/Rectangle 126.png";
 
 const Headers = styled.header`
   display: flex;
@@ -58,14 +58,14 @@ const Nav = styled.nav`
       width: 100%;
       background: var(--purple);
     }
-    /* &:not(:last-child) {
+    &:not(:last-child) {
       margin-right: 2rem;
-    } */
-    /* @media only Screen and (max-width: 48em) {
+    }
+    @media only Screen and (max-width: 48em) {
       &:not(:last-child) {
         margin-right: 1rem;
       }
-    } */
+    }
   }
 `;
 
@@ -198,7 +198,6 @@ const Header = () => {
 
         duration: 1,
         ease: "power1.out",
-
         scrollTrigger: {
           trigger: element,
           start: "bottom+=200 top",
@@ -235,7 +234,7 @@ const Header = () => {
     <Headers ref={ref}>
       <Logo>
         <img src={logo} alt="CodeBucks" />
-        <h3>CodeBucks</h3>
+        <h3>Dyno</h3>
       </Logo>
       <Nav>
         <a href="#home" onClick={(e) => scrollUp("home", e)}>
