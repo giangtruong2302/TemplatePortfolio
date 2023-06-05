@@ -1,5 +1,6 @@
 import { GlobalStyle } from "./globalStyles";
 import { lazy, Suspense } from "react";
+import "./index.css";
 
 const Home = lazy(() => import("./Pages/Home"));
 const Header = lazy(() => import("./components/Header/index"));
@@ -15,6 +16,7 @@ function App() {
         <ScrollToTop />
         <Header />
         <Home />
+
         <Footer />
       </Suspense>
     </>

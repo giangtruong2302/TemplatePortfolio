@@ -5,8 +5,8 @@ import styled, { keyframes } from "styled-components";
 import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
 import whiteBlob from "../../assets/blob white.png";
-import arrow from "../../assets/Arrow Right.svg";
-import frontend from "../../assets/frontend.gif";
+import arrow from "../../assets/Arrow.svg";
+import frontend from "../../assets/fe1.gif";
 import TypeWriterText from "../../components/TypeWriterText";
 const move = keyframes`
 0% { transform: translateY(-2px)  }
@@ -67,7 +67,7 @@ const PurpleBlob = styled.div`
 const WhiteBlob = styled.div`
   width: calc(20% + 30vw);
   position: absolute;
-  right: calc(3.5rem + 3.5vw);
+  right: calc(2.5rem + 2.5vw);
   animation: ${moveWhite} 3s ease infinite;
   top: calc(2rem + 2vw);
   z-index: 5;
@@ -88,12 +88,11 @@ const MainContent = styled.div`
 
 const MobileSvg = styled.div`
   max-width: 100%;
-  width: calc(30% + 10vw);
+  width: calc(30% + 20vw);
   height: auto;
-  z-index: 7;
+  z-index: 19;
   background: url(${frontend});
   background-repeat: no-repeat;
-  /* animation: ${move} 3s ease infinite; */
   @media only Screen and (max-width: 48em) {
     align-self: flex-start;
     position: absolute;
@@ -145,7 +144,7 @@ const Circle = styled.span`
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: var(--purple);
+  background-color: green;
   margin-right: 0.5rem;
 `;
 
@@ -206,14 +205,18 @@ const HeroSection = () => {
         <Lb id="leftBlock">
           <Topic>
             <Circle />
-            <span>We Build Web</span>
+            <span>I Build Website</span>
           </Topic>
           <Title>Transforming your digital presence</Title>
           <SubText>
             we help fast growing companies build award winning websites
           </SubText>
           <TypeWriterText />
-          <CTA>
+          <CTA
+            onClick={() => {
+              window.location.href = "/#about";
+            }}
+          >
             Explore more &nbsp;
             <img src={arrow} alt="cta" width="100" height="100" />
           </CTA>

@@ -9,7 +9,6 @@ const Title = styled.h2`
   color: ${(props) => props.theme.text};
   span {
     text-transform: uppercase;
-    font-family: "Akaya Telivigala", cursive;
   }
   .text-1 {
     color: yellow;
@@ -18,7 +17,10 @@ const Title = styled.h2`
     color: orange;
   }
   .text-3 {
-    color: red;
+    color: blue;
+  }
+  .text-4 {
+    color: green;
   }
 `;
 const SubTitle = styled.h3`
@@ -46,13 +48,22 @@ const TypeWriterText = () => {
           }}
           onInit={(typewriter) => {
             typewriter
-              .typeString('<span class="text-1">Dyno!</span>')
+              .typeString(
+                '<span class="text-1">Duong Truong Giang ! 👨‍💻 👨‍🎓 </span>'
+              )
               .pauseFor(2000)
               .deleteAll()
-              .typeString('<span class="text-2">Collectible Items</span>')
+              .typeString('<span class="text-2">Dyno</span>')
               .pauseFor(2000)
               .deleteAll()
-              .typeString('<span class="text-3">Ape Killer</span>')
+              .typeString(
+                '<span class="text-3">Software Engineer 👨‍💻 👨‍🎓 </span>'
+              )
+              .pauseFor(2000)
+              .deleteAll()
+              .typeString(
+                '<span class="text-4">Website Developer 👨‍💻 👨‍🎓 </span>'
+              )
               .pauseFor(2000)
               .deleteAll()
               .start();
